@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -40,12 +42,13 @@ class Feight extends StatelessWidget {
 class LinePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    // TODO: implement paint
+    final paint = Paint();
+    paint.strokeWidth = 10;
+    paint.color = Colors.cyan;
+
+    canvas.drawPoints(PointMode.points, [const Offset(20, 20)], paint);
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    // TODO: implement shouldRepaint
-    throw UnimplementedError();
-  }
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
 }
